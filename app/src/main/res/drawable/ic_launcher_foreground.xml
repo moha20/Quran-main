@@ -1,0 +1,43 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Crescent Moon in Gold -->
+    <path
+        android:fillColor="#F5D061"
+        android:pathData="M54,23 C58.5,23 62.5,25 65.5,28 C61,28 55,31 55,38 C55,44 59.5,47.5 64,48 C61,50.5 57,52 52.5,52 C44.5,52 38,45.5 38,37.5 C38,29.5 45.2,23 54,23 Z" />
+
+    <!-- Radiant Star in Gold -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M65,34 L66.5,37.5 L70,38 L67.3,40.5 L68,44 L65,42.2 L62,44 L62.7,40.5 L60,38 L63.5,37.5 Z" />
+
+    <!-- Open Quran Book Left Page -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,55 C38,52 48,53.5 52,56 L52,78 C48,75.5 38,74 30,77 Z" />
+
+    <!-- Open Quran Book Right Page -->
+    <path
+        android:fillColor="#F3F0E6"
+        android:pathData="M78,55 C70,52 60,53.5 56,56 L56,78 C60,75.5 70,74 78,77 Z" />
+
+    <!-- Gold Edge Trim & Center Binding -->
+    <path
+        android:fillColor="#D8A538"
+        android:pathData="M52,55.5 L56,55.5 L56,78.5 L52,78.5 Z" />
+    
+    <!-- Book Stand (Rehal) Base in Warm Gold -->
+    <path
+        android:fillColor="#E5B869"
+        android:pathData="M36,78 L54,88 L72,78 L68,82 L54,91 L40,82 Z" />
+
+    <!-- Quran text decorative lines -->
+    <path
+        android:strokeColor="#C5A059"
+        android:strokeWidth="1.2"
+        android:strokeLineCap="round"
+        android:pathData="M35,61 L48,59 M35,66 L48,64 M35,71 L47,69 M60,59 L73,61 M60,64 L73,66 M61,69 L73,71" />
+</vector>

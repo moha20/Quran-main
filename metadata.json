@@ -1,0 +1,6 @@
+{
+  "name": "القرآن الكريم",
+  "description": "تطبيق قارئ القرآن الكريم الشامل: قراءة بالتشكيل، تفاسير، تلاوات صوتية، أدوات حفظ، وأوقات الصلاة",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
