@@ -21,6 +21,7 @@ import com.mosalah.quran.data.repository.QuranRepository
 import com.mosalah.quran.data.repository.SearchResult
 import com.mosalah.quran.data.repository.TafsirRepository
 import com.mosalah.quran.data.repository.TafsirType
+import com.mosalah.quran.service.audio.AudioPlaybackStatus
 import com.mosalah.quran.service.audio.AudioPlayerUiState
 import com.mosalah.quran.service.audio.QuranAudioPlayer
 import com.mosalah.quran.service.prayer.CityPreset
@@ -84,7 +85,7 @@ class QuranViewModel(application: Application) : AndroidViewModel(application) {
 
     val repository = QuranRepository(application)
     val tafsirRepository = TafsirRepository(application)
-    val audioPlayer = QuranAudioPlayer(application)
+    val audioPlayer = QuranAudioPlayer.getInstance(application)
     val onlinePrayerService = OnlinePrayerService(application)
     private val prefs = application.getSharedPreferences("quran_app_prefs", Context.MODE_PRIVATE)
 
@@ -133,6 +134,14 @@ class QuranViewModel(application: Application) : AndroidViewModel(application) {
             themeMode = initialTheme,
             selectedTranslation = savedTranslation
         )
+
+        val savedQariId = prefs.getString("selected_qari_id", null)
+        if (savedQariId != null) {
+            val savedQari = repository.getQaris().find { it.id == savedQariId }
+            if (savedQari != null) {
+                audioPlayer.setQari(savedQari)
+            }
+        }
 
         viewModelScope.launch {
             repository.initDefaultTasbih()
@@ -228,6 +237,7 @@ class QuranViewModel(application: Application) : AndroidViewModel(application) {
 
     fun setQari(qari: Qari) {
         audioPlayer.setQari(qari)
+        prefs.edit().putString("selected_qari_id", qari.id).apply()
     }
 
     fun setAudioSpeed(speed: Float) {
@@ -542,6 +552,8 @@ class QuranViewModel(application: Application) : AndroidViewModel(application) {
 
     override fun onCleared() {
         super.onCleared()
-        audioPlayer.release()
+        if (audioPlayer.uiState.value.status == AudioPlaybackStatus.IDLE) {
+            audioPlayer.release()
+        }
     }
 }

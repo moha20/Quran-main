@@ -30,4 +30,18 @@ class GreetingScreenshotTest {
 
     composeTestRule.onRoot().captureRoboImage(filePath = "src/test/screenshots/greeting.png")
   }
+
+  @Test
+  fun splash_screenshot() {
+    composeTestRule.setContent {
+      MyApplicationTheme(darkTheme = true) {
+        com.mosalah.quran.ui.screens.SplashScreen(
+          durationMillis = 3000L,
+          onTimeout = {}
+        )
+      }
+    }
+
+    composeTestRule.onRoot().captureRoboImage(filePath = "src/test/screenshots/splash.png")
+  }
 }

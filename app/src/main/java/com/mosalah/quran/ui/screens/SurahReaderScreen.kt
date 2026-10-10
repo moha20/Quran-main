@@ -52,6 +52,7 @@ import androidx.compose.material.icons.filled.SkipNext
 import androidx.compose.material.icons.filled.SkipPrevious
 import androidx.compose.material.icons.filled.Speed
 import androidx.compose.material.icons.filled.ViewList
+import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -101,6 +102,7 @@ import com.mosalah.quran.data.model.Surah
 import com.mosalah.quran.service.audio.AudioPlaybackStatus
 import com.mosalah.quran.service.audio.AudioPlayerUiState
 import com.mosalah.quran.ui.components.AddNoteDialog
+import com.mosalah.quran.ui.components.SelectQariDialog
 import com.mosalah.quran.ui.components.ShareVerseDialog
 import com.mosalah.quran.ui.components.TafsirDialog
 import com.mosalah.quran.ui.components.WordAnalysisDialog
@@ -148,6 +150,7 @@ fun SurahReaderScreen(
     )
 
     var showFontSettings by remember { mutableStateOf(false) }
+    var showQariDialog by remember { mutableStateOf(false) }
 
     // Navigate to initial Ayah in both Page and List mode
     LaunchedEffect(initialAyahNumber) {
@@ -266,6 +269,29 @@ fun SurahReaderScreen(
                     IconButton(onClick = { showFontSettings = !showFontSettings }) {
                         Icon(Icons.Default.FormatSize, contentDescription = "حجم الخط")
                     }
+
+                    // Quick Listen / Play button
+                    IconButton(
+                        onClick = {
+                            val isPlayingThisSurah = audioState.surahNumber == surahNumber &&
+                                    audioState.status == AudioPlaybackStatus.PLAYING
+                            if (isPlayingThisSurah) {
+                                viewModel.toggleAudioPlayback()
+                            } else if (audioState.surahNumber == surahNumber && audioState.status == AudioPlaybackStatus.PAUSED) {
+                                viewModel.toggleAudioPlayback()
+                            } else {
+                                viewModel.playAyahAudio(surahNumber, 1)
+                            }
+                        }
+                    ) {
+                        val isPlayingThisSurah = audioState.surahNumber == surahNumber &&
+                                audioState.status == AudioPlaybackStatus.PLAYING
+                        Icon(
+                            imageVector = if (isPlayingThisSurah) Icons.Default.Pause else Icons.Default.VolumeUp,
+                            contentDescription = if (isPlayingThisSurah) "إيقاف مؤقت" else "استماع للسورة",
+                            tint = IslamicEmeraldPrimary
+                        )
+                    }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.surface
@@ -288,7 +314,8 @@ fun SurahReaderScreen(
                             else -> 1.0f
                         }
                         viewModel.setAudioSpeed(nextSpeed)
-                    }
+                    },
+                    onSelectQari = { showQariDialog = true }
                 )
             }
         }
@@ -539,6 +566,18 @@ fun SurahReaderScreen(
             ayah = shareAyah,
             surahName = surah?.nameArabic ?: "",
             onDismiss = { viewModel.showShareDialog(null) }
+        )
+    }
+
+    if (showQariDialog) {
+        SelectQariDialog(
+            qaris = viewModel.repository.getQaris(),
+            currentQari = audioState.qari,
+            onSelect = { qari ->
+                viewModel.setQari(qari)
+                showQariDialog = false
+            },
+            onDismiss = { showQariDialog = false }
         )
     }
 }
@@ -1190,7 +1229,8 @@ fun AudioBottomBar(
     onPlayPause: () -> Unit,
     onNext: () -> Unit,
     onPrev: () -> Unit,
-    onSpeedChange: () -> Unit
+    onSpeedChange: () -> Unit,
+    onSelectQari: () -> Unit = {}
 ) {
     Card(
         modifier = Modifier
@@ -1207,13 +1247,27 @@ fun AudioBottomBar(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = audioState.qari.nameArabic,
-                    style = MaterialTheme.typography.titleSmall,
-                    fontWeight = FontWeight.Bold,
-                    color = IslamicEmeraldPrimary
-                )
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .clip(RoundedCornerShape(8.dp))
+                    .clickable { onSelectQari() }
+                    .padding(end = 4.dp)
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = audioState.qari.nameArabic,
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = IslamicEmeraldPrimary
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(
+                        text = "(تغيير)",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = QuranGoldPrimary
+                    )
+                }
                 val currentPlayingSurah = remember(audioState.surahNumber) {
                     com.mosalah.quran.data.quran.QuranDataProvider.surahs.find { it.number == audioState.surahNumber }
                 }

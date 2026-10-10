@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إعلان تطبيق قرآن وذكر | Quran & Dhikr Ad Creatives</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-night: #061F17;
+            --emerald-primary: #0F5A3E;
+            --emerald-medium: #1B7A55;
+            --emerald-light: #34D399;
+            --gold-primary: #D4AF37;
+            --gold-light: #FDE68A;
+            --gold-dark: #9A7B1C;
+            --parchment-bg: #F9F6EE;
+            --card-glass: rgba(15, 90, 62, 0.45);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: radial-gradient(circle at 50% 20%, #0F3A2C 0%, #061A13 100%);
+            color: #FFFFFF;
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header-title h1 {
+            color: var(--gold-primary);
+            font-size: 2.4rem;
+            font-weight: 900;
+            text-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .header-title p {
+            color: #A7F3D0;
+            font-size: 1.1rem;
+            margin-top: 6px;
+        }
+
+        /* BANNER CONTAINER (1200 x 630 - Facebook Feed Standard) */
+        .ad-banner-1200 {
+            width: 100%;
+            max-width: 1100px;
+            background: linear-gradient(135deg, #092C20 0%, #04140E 100%);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            border-radius: 28px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(212, 175, 55, 0.15);
+            padding: 45px 50px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+
+        .ad-banner-1200::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .ad-content-side {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 2;
+        }
+
+        .badge-app {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-light);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            width: fit-content;
+        }
+
+        .ad-heading {
+            font-size: 2.6rem;
+            font-weight: 900;
+            line-height: 1.3;
+            color: #FFFFFF;
+        }
+
+        .ad-heading span {
+            color: var(--gold-primary);
+            display: block;
+        }
+
+        .ad-desc {
+            font-size: 1.15rem;
+            color: #D1FAE5;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .feat-item {
+            background: rgba(15, 90, 62, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            padding: 10px 14px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #FFFFFF;
+        }
+
+        .feat-icon {
+            font-size: 1.3rem;
+        }
+
+        .cta-row {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-top: 15px;
+        }
+
+        .btn-download {
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
+            color: #061F17;
+            padding: 14px 34px;
+            border-radius: 16px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35);
+            transition: transform 0.2s;
+        }
+
+        .no-ads-badge {
+            background: rgba(52, 211, 153, 0.15);
+            border: 1px solid var(--emerald-light);
+            color: #6EE7B7;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        /* PHONE MOCKUP */
+        .phone-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .phone-frame {
+            width: 320px;
+            height: 620px;
+            background: #0B1914;
+            border: 10px solid #1E2D26;
+            border-radius: 46px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(15, 90, 62, 0.6);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .phone-notch {
+            width: 120px;
+            height: 24px;
+            background: #1E2D26;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            z-index: 10;
+        }
+
+        .phone-screen {
+            flex: 1;
+            background: radial-gradient(circle at 50% 10%, #0F4A34 0%, #061912 100%);
+            display: flex;
+            flex-direction: column;
+            padding: 40px 16px 16px 16px;
+        }
+
+        .screen-header {
+            text-align: center;
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .screen-header .app-brand {
+            font-family: 'Amiri', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+        }
+
+        .surah-card {
+            background: #FDFBF7;
+            color: #1A2420;
+            border: 2px solid var(--gold-primary);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 14px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        }
+
+        .surah-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        .surah-name {
+            font-family: 'Amiri', serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--emerald-primary);
+        }
+
+        .ayah-sample {
+            font-family: 'Amiri', serif;
+            font-size: 1.3rem;
+            line-height: 2;
+            text-align: center;
+            color: #161A17;
+        }
+
+        .tajweed-mark {
+            color: #10B981;
+            font-weight: bold;
+        }
+
+        .tajweed-qalqalah {
+            color: #3B82F6;
+            font-weight: bold;
+        }
+
+        .widget-box {
+            background: rgba(15, 90, 62, 0.4);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 14px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .widget-label {
+            font-size: 0.85rem;
+            color: #A7F3D0;
+        }
+
+        .widget-val {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--gold-light);
+        }
+
+        .phone-bottom-nav {
+            margin-top: auto;
+            background: rgba(6, 31, 23, 0.95);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 20px;
+            padding: 8px 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .nav-tab {
+            font-size: 0.72rem;
+            color: #A7F3D0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .nav-tab.active {
+            color: var(--gold-primary);
+            font-weight: 700;
+        }
+
+        @media (max-width: 900px) {
+            .ad-banner-1200 {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            .phone-wrapper {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-title">
+        <h1>تصميم بانر إعلاني جاهز لتطبيق «قرآن وذكر»</h1>
+        <p>يمكنك التقاط لقطة شاشة عالية الدقة (Screenshot) لهذا البانر واستخدامه مباشرة في إعلانات ومنشورات فيسبوك</p>
+    </div>
+
+    <!-- MAIN AD BANNER -->
+    <div class="ad-banner-1200">
+        <div class="ad-content-side">
+            <div class="badge-app">🌿 رفيقك الإيماني اليومي</div>
+            
+            <div class="ad-heading">
+                تطبيق <span>«قرآن وذكر»</span>
+                القرآن الكريم والأذكار كما تحب أن تراها
+            </div>
+
+            <p class="ad-desc">
+                تطبيق إسلامي شامل بالرسم العثماني المريح وتلوين أحكام التجويد، مع تلاوات خاشعة، أدوات ذكية لتثبيت الحفظ، مواقيت الصلاة والقبلة، وحصن المسلم والسبحة الإلكترونية.
+            </p>
+
+            <div class="features-grid">
+                <div class="feat-item"><span class="feat-icon">📖</span> مصحف كامل بالتجويد الملون</div>
+                <div class="feat-item"><span class="feat-icon">🎧</span> تلاوات خاشعة لكبار القراء</div>
+                <div class="feat-item"><span class="feat-icon">🧠</span> خطط وأدوات ذكية للحفظ</div>
+                <div class="feat-item"><span class="feat-icon">📿</span> أذكار وسبحة إلكترونية</div>
+                <div class="feat-item"><span class="feat-icon">🕌</span> مواقيت الصلاة واتجاه القبلة</div>
+                <div class="feat-item"><span class="feat-icon">⚡</span> يعمل دون إنترنت (Offline)</div>
+            </div>
+
+            <div class="cta-row">
+                <a href="#" class="btn-download">📲 حمّل التطبيق مجاناً</a>
+                <div class="no-ads-badge">✨ خـالٍ تماماً مـن الإعـلانات</div>
+            </div>
+        </div>
+
+        <div class="phone-wrapper">
+            <div class="phone-frame">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <div class="screen-header">
+                        <div class="app-brand">قرآن وذكر</div>
+                    </div>
+
+                    <!-- MUSHAF CARD -->
+                    <div class="surah-card">
+                        <div class="surah-header-row">
+                            <span class="surah-name">سُورَةُ الإِخْلَاصِ</span>
+                            <span style="font-size: 0.8rem; color: #78716C;">مَكِّيَّةٌ • ٤ آيَات</span>
+                        </div>
+                        <div class="ayah-sample">
+                            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ<br>
+                            قُلْ هُوَ اللَّهُ <span class="tajweed-mark">أَحَدٌ</span> ﴿١﴾<br>
+                            اللَّهُ الصَّمَ<span class="tajweed-qalqalah">دُ</span> ﴿٢﴾
+                        </div>
+                    </div>
+
+                    <!-- PRAYER TIME WIDGET -->
+                    <div class="widget-box">
+                        <div>
+                            <div class="widget-label">الصلاة القادمة</div>
+                            <div class="widget-val">صلاة العصر (٠٣:١٥ م)</div>
+                        </div>
+                        <div style="font-size: 1.5rem;">🕌</div>
+                    </div>
+
+                    <!-- DHIKR WIDGET -->
+                    <div class="widget-box" style="margin-bottom: 0;">
+                        <div>
+                            <div class="widget-label">السبحة الإلكترونية</div>
+                            <div class="widget-val">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ (٣٣)</div>
+                        </div>
+                        <div style="font-size: 1.5rem;">📿</div>
+                    </div>
+
+                    <!-- BOTTOM NAV -->
+                    <div class="phone-bottom-nav">
+                        <div class="nav-tab active">
+                            <span>📖</span>
+                            <span>المصحف</span>
+                        </div>
+                        <div class="nav-tab">
+                            <span>🎧</span>
+                            <span>التلاوة</span>
+                        </div>
+                        <div class="nav-tab">
+                            <span>🧠</span>
+                            <span>الحفظ</span>
+                        </div>
+                        <div class="nav-tab">
+                            <span>🕌</span>
+                            <span>المواقيت</span>
+                        </div>
+                        <div class="nav-tab">
+                            <span>📿</span>
+                            <span>الأذكار</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

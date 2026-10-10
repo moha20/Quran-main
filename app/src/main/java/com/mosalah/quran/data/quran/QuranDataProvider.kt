@@ -33,10 +33,74 @@ object QuranDataProvider {
         ),
         Qari(
             id = "abdulbasit",
-            nameArabic = "عبد الباسط عبد الصمد",
-            nameEnglish = "Abdul Basit Abdul Samad",
+            nameArabic = "عبد الباسط عبد الصمد (مرتل)",
+            nameEnglish = "Abdul Basit Abdul Samad (Murattal)",
             style = "مرتل - الصوت الخالد",
-            audioSubfolder = "AbdulSamad_64kbps_QuranExplorer.Com",
+            audioSubfolder = "Abdul_Basit_Murattal_192kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "abdulbasit_mujawwad",
+            nameArabic = "عبد الباسط عبد الصمد (مجود)",
+            nameEnglish = "Abdul Basit Abdul Samad (Mujawwad)",
+            style = "مجود - تحبير وتجويد بديع",
+            audioSubfolder = "Abdul_Basit_Mujawwad_128kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "warsh_abdulbasit",
+            nameArabic = "عبد الباسط عبد الصمد (رواية ورش)",
+            nameEnglish = "Abdul Basit Abdul Samad (Warsh)",
+            style = "رواية ورش عن نافع",
+            audioSubfolder = "warsh/warsh_Abdul_Basit_128kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "minshawy_murattal",
+            nameArabic = "محمد صديق المنشاوي (مرتل)",
+            nameEnglish = "Mohamed Siddiq Al-Minshawi (Murattal)",
+            style = "مرتل - الصوت الباكي الخاشع",
+            audioSubfolder = "Minshawy_Murattal_128kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "minshawy_mujawwad",
+            nameArabic = "محمد صديق المنشاوي (مجود)",
+            nameEnglish = "Mohamed Siddiq Al-Minshawi (Mujawwad)",
+            style = "مجود - نبرة شجية خاشعة",
+            audioSubfolder = "Minshawy_Mujawwad_192kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "minshawy_teacher",
+            nameArabic = "محمد صديق المنشاوي (المعلم)",
+            nameEnglish = "Mohamed Siddiq Al-Minshawi (Teacher)",
+            style = "المصحف المعلم - مع الترديد",
+            audioSubfolder = "Minshawy_Teacher_128kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "husary",
+            nameArabic = "محمود خليل الحصري (مرتل)",
+            nameEnglish = "Mahmoud Khalil Al-Husary (Murattal)",
+            style = "مرتل - شيخ عموم المقارئ المصرية",
+            audioSubfolder = "Husary_128kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "husary_mujawwad",
+            nameArabic = "محمود خليل الحصري (مجود)",
+            nameEnglish = "Mahmoud Khalil Al-Husary (Mujawwad)",
+            style = "مجود - قمة الإتقان والضبط",
+            audioSubfolder = "Husary_128kbps_Mujawwad",
+            country = "مصر"
+        ),
+        Qari(
+            id = "husary_muallim",
+            nameArabic = "محمود خليل الحصري (المعلم)",
+            nameEnglish = "Mahmoud Khalil Al-Husary (Muallim)",
+            style = "المصحف المعلم - لتعليم الأحكام",
+            audioSubfolder = "Husary_Muallim_128kbps",
             country = "مصر"
         ),
         Qari(
@@ -48,20 +112,308 @@ object QuranDataProvider {
             country = "السعودية"
         ),
         Qari(
-            id = "husary",
-            nameArabic = "محمود خليل الحصري",
-            nameEnglish = "Mahmoud Khalil Al-Husary",
-            style = "المصحف المعلم - للمتعلمين",
-            audioSubfolder = "Husary_128kbps",
-            country = "مصر"
+            id = "shuraym",
+            nameArabic = "سعود الشريم",
+            nameEnglish = "Saud Ash-Shuraym",
+            style = "تلاوة الحرم المكي الشريف",
+            audioSubfolder = "Saood_ash-Shuraym_128kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "muaiqly",
+            nameArabic = "ماهر المعيقلي",
+            nameEnglish = "Maher Al-Muaiqly",
+            style = "إمام المسجد الحرام",
+            audioSubfolder = "MaherAlMuaiqly128kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "dossari",
+            nameArabic = "ياسر الدوسري",
+            nameEnglish = "Yasser Al-Dosari",
+            style = "إمام المسجد الحرام",
+            audioSubfolder = "Yasser_Ad-Dussary_128kbps",
+            country = "السعودية"
         ),
         Qari(
             id = "ghamadi",
             nameArabic = "سعد الغامدي",
             nameEnglish = "Saad Al-Ghamdi",
-            style = "مرتل - خاشع",
+            style = "مرتل - خاشع ومؤثر",
             audioSubfolder = "Ghamadi_40kbps",
             country = "السعودية"
+        ),
+        Qari(
+            id = "ajamy",
+            nameArabic = "أحمد بن علي العجمي",
+            nameEnglish = "Ahmed Al-Ajamy",
+            style = "مرتل - صوت شجي رنان",
+            audioSubfolder = "Ahmed_ibn_Ali_al-Ajamy_128kbps_ketaballah.net",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "qatami",
+            nameArabic = "ناصر القطامي",
+            nameEnglish = "Nasser Al-Qatami",
+            style = "تلاوة نجدية ندية هادئة",
+            audioSubfolder = "Nasser_Alqatami_128kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "shatri",
+            nameArabic = "أبو بكر الشاطري",
+            nameEnglish = "Abu Bakr Ash-Shatri",
+            style = "تلاوة حجازية عذبة",
+            audioSubfolder = "Abu_Bakr_Ash-Shaatree_128kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "hudhaify",
+            nameArabic = "علي بن عبد الرحمن الحذيفي",
+            nameEnglish = "Ali Al-Hudhaify",
+            style = "إمام المسجد النبوي الشريف",
+            audioSubfolder = "Hudhaify_128kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "ayyoub",
+            nameArabic = "محمد أيوب",
+            nameEnglish = "Muhammad Ayyoub",
+            style = "إمام المسجد النبوي الشريف",
+            audioSubfolder = "Muhammad_Ayyoub_128kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "juhany",
+            nameArabic = "عبد الله عواد الجهني",
+            nameEnglish = "Abdullah Awad Al-Juhany",
+            style = "إمام المسجد الحرام",
+            audioSubfolder = "Abdullaah_3awwaad_Al-Juhaynee_128kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "ali_jaber",
+            nameArabic = "علي جابر",
+            nameEnglish = "Ali Jaber",
+            style = "إمام المسجد الحرام الأسبق",
+            audioSubfolder = "Ali_Jaber_64kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "tablaway",
+            nameArabic = "محمد محمود الطبلاوي",
+            nameEnglish = "Mohammad Al-Tablaway",
+            style = "تلاوة مصرية أصيلة شجية",
+            audioSubfolder = "Mohammad_al_Tablaway_128kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "rifai",
+            nameArabic = "هاني الرفاعي",
+            nameEnglish = "Hani Ar-Rifai",
+            style = "مرتل - صوت باكٍ خاشع",
+            audioSubfolder = "Hani_Rifai_192kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "abbad",
+            nameArabic = "فارس عباد",
+            nameEnglish = "Fares Abbad",
+            style = "مرتل - نبرة شجية عذبة",
+            audioSubfolder = "Fares_Abbad_64kbps",
+            country = "اليمن"
+        ),
+        Qari(
+            id = "basfar",
+            nameArabic = "عبد الله بصفر",
+            nameEnglish = "Abdullah Basfar",
+            style = "مرتل - إتقان ومخارج حروف",
+            audioSubfolder = "Abdullah_Basfar_192kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "matroud",
+            nameArabic = "عبد الله مطرود",
+            nameEnglish = "Abdullah Matroud",
+            style = "مرتل - هادئ ومريح للقلب",
+            audioSubfolder = "Abdullah_Matroud_128kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "budair",
+            nameArabic = "صلاح البدير",
+            nameEnglish = "Salah Al-Budair",
+            style = "إمام وخطيب المسجد النبوي",
+            audioSubfolder = "Salah_Al_Budair_128kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "bukhatir",
+            nameArabic = "صلاح بو خاطر",
+            nameEnglish = "Salah Bukhatir",
+            style = "تلاوة خاشعة مميزة",
+            audioSubfolder = "Salaah_AbdulRahman_Bukhatir_128kbps",
+            country = "الإمارات"
+        ),
+        Qari(
+            id = "mustafa_ismail",
+            nameArabic = "مصطفى إسماعيل",
+            nameEnglish = "Mustafa Ismail",
+            style = "أمير دولة التلاوة والمقامات",
+            audioSubfolder = "Mustafa_Ismail_48kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "banna",
+            nameArabic = "محمود علي البنا",
+            nameEnglish = "Mahmoud Ali Al-Banna",
+            style = "تلاوة قوية ومتقنة",
+            audioSubfolder = "mahmoud_ali_al_banna_32kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "jibreel",
+            nameArabic = "محمد جبريل",
+            nameEnglish = "Muhammad Jibreel",
+            style = "تلاوة دعائية خاشعة",
+            audioSubfolder = "Muhammad_Jibreel_128kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "akhdar",
+            nameArabic = "إبراهيم الأخضر",
+            nameEnglish = "Ibrahim Al-Akhdar",
+            style = "شيخ قراء المدينة المنورة",
+            audioSubfolder = "Ibrahim_Akhdar_32kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "muhsin_qasim",
+            nameArabic = "عبد المحسن القاسم",
+            nameEnglish = "Muhsin Al-Qasim",
+            style = "إمام وخطيب المسجد النبوي",
+            audioSubfolder = "Muhsin_Al_Qasim_192kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "qahtani",
+            nameArabic = "خالد القحطاني",
+            nameEnglish = "Khalid Al-Qahtani",
+            style = "تلاوة نجدية خاشعة",
+            audioSubfolder = "Khaalid_Abdullaah_al-Qahtaanee_192kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "sowaid",
+            nameArabic = "أيمن سويد",
+            nameEnglish = "Ayman Sowaid",
+            style = "المصحف المعلم برواية حفص",
+            audioSubfolder = "Ayman_Sowaid_64kbps",
+            country = "سوريا"
+        ),
+        Qari(
+            id = "neana",
+            nameArabic = "أحمد نعينع",
+            nameEnglish = "Ahmed Neana",
+            style = "تلاوة ندية محبرة",
+            audioSubfolder = "Ahmed_Neana_128kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "tunaiji",
+            nameArabic = "خليفة الطنيجي",
+            nameEnglish = "Khalifa Al-Tunaiji",
+            style = "تلاوة إماراتية عذبة",
+            audioSubfolder = "khalefa_al_tunaiji_64kbps",
+            country = "الإمارات"
+        ),
+        Qari(
+            id = "sahl_yassin",
+            nameArabic = "سهل ياسين",
+            nameEnglish = "Sahl Yassin",
+            style = "تلاوة هادئة ووقورة",
+            audioSubfolder = "Sahl_Yassin_128kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "yaser_salamah",
+            nameArabic = "ياسر سلامة",
+            nameEnglish = "Yasser Salamah",
+            style = "تلاوة حدر سريعة متقنة",
+            audioSubfolder = "Yaser_Salamah_128kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "nabil_rifai",
+            nameArabic = "نبيل الرفاعي",
+            nameEnglish = "Nabil Ar-Rifai",
+            style = "تلاوة خاشعة عذبة",
+            audioSubfolder = "Nabil_Rifa3i_48kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "akram_alaqimy",
+            nameArabic = "أكرم العلاقمي",
+            nameEnglish = "Akram Al-Alaqimi",
+            style = "مرتل متقن",
+            audioSubfolder = "Akram_AlAlaqimy_128kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "suwaisi",
+            nameArabic = "علي حجاج السويسي",
+            nameEnglish = "Ali Hajjaj Al-Suwaisi",
+            style = "تلاوة نادرة بديعة",
+            audioSubfolder = "Ali_Hajjaj_AlSuesy_128kbps",
+            country = "مصر"
+        ),
+        Qari(
+            id = "abdulkareem",
+            nameArabic = "محمد عبد الكريم",
+            nameEnglish = "Muhammad Abdul Kareem",
+            style = "تلاوة برواية الدوري عن أبي عمرو",
+            audioSubfolder = "Muhammad_AbdulKareem_128kbps",
+            country = "السودان"
+        ),
+        Qari(
+            id = "alili",
+            nameArabic = "عزيز عليلي",
+            nameEnglish = "Aziz Alili",
+            style = "تلاوة هادئة مميزة",
+            audioSubfolder = "aziz_alili_128kbps",
+            country = "البوسنة"
+        ),
+        Qari(
+            id = "mansoori",
+            nameArabic = "كريم منصوري",
+            nameEnglish = "Karim Mansoori",
+            style = "تلاوة محبرة متقنة",
+            audioSubfolder = "Karim_Mansoori_40kbps",
+            country = "إيران"
+        ),
+        Qari(
+            id = "parhizgar",
+            nameArabic = "شهريار برهيزكار",
+            nameEnglish = "Shahriar Parhizgar",
+            style = "ترتيل تعليمي للحفظ والمراجعة",
+            audioSubfolder = "Parhizgar_48kbps",
+            country = "إيران"
+        ),
+        Qari(
+            id = "warsh_dosary",
+            nameArabic = "إبراهيم الدوسري (رواية ورش)",
+            nameEnglish = "Ibrahim Al-Dosary (Warsh)",
+            style = "رواية ورش عن نافع",
+            audioSubfolder = "warsh/warsh_ibrahim_aldosary_128kbps",
+            country = "السعودية"
+        ),
+        Qari(
+            id = "warsh_jazaery",
+            nameArabic = "ياسين الجزائري (رواية ورش)",
+            nameEnglish = "Yassin Al-Jazaery (Warsh)",
+            style = "رواية ورش عن نافع",
+            audioSubfolder = "warsh/warsh_yassin_al_jazaery_64kbps",
+            country = "الجزائر"
         )
     )
 
@@ -285,6 +637,11 @@ object QuranDataProvider {
     fun getAudioUrl(qari: Qari, surahNumber: Int, ayahNumber: Int): String {
         val sNum = surahNumber.toString().padStart(3, '0')
         val aNum = ayahNumber.toString().padStart(3, '0')
-        return "https://everyayah.com/data/${qari.audioSubfolder}/$sNum$aNum.mp3"
+        val folder = qari.audioSubfolder.trim('/')
+        return if (folder.startsWith("http://") || folder.startsWith("https://")) {
+            "$folder/$sNum$aNum.mp3"
+        } else {
+            "https://everyayah.com/data/$folder/$sNum$aNum.mp3"
+        }
     }
 }

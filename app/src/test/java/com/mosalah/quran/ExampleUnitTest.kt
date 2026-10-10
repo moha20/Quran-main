@@ -55,4 +55,47 @@ class ExampleUnitTest {
     val defaultState = com.mosalah.quran.ui.viewmodel.QuranUiState()
     assertEquals("ar_only", defaultState.selectedTranslation)
   }
+
+  @Test
+  fun reciters_hasComprehensiveCollection() {
+    val qaris = QuranDataProvider.qaris
+    assertTrue("Reciters list should have at least 40 items", qaris.size >= 40)
+
+    val ids = qaris.map { it.id }
+    assertEquals("All reciter IDs should be unique", ids.size, ids.distinct().size)
+
+    // Ensure all 5 original reciter IDs are preserved
+    assertTrue(ids.contains("alafasy"))
+    assertTrue(ids.contains("abdulbasit"))
+    assertTrue(ids.contains("sudais"))
+    assertTrue(ids.contains("husary"))
+    assertTrue(ids.contains("ghamadi"))
+
+    // Ensure all items have valid names, styles, countries, and audioSubfolder
+    qaris.forEach { qari ->
+      assertTrue(qari.id.isNotBlank())
+      assertTrue(qari.nameArabic.isNotBlank())
+      assertTrue(qari.nameEnglish.isNotBlank())
+      assertTrue(qari.style.isNotBlank())
+      assertTrue(qari.country.isNotBlank())
+      assertTrue(qari.audioSubfolder.isNotBlank())
+
+      val audioUrl = QuranDataProvider.getAudioUrl(qari, 1, 1)
+      assertTrue("URL should start with https://everyayah.com/data/", audioUrl.startsWith("https://everyayah.com/data/"))
+      assertTrue("URL should end with 001001.mp3", audioUrl.endsWith("001001.mp3"))
+    }
+  }
+
+  @Test
+  fun audioPlayer_singletonAndService_configuredCorrectly() {
+    val context = ApplicationProvider.getApplicationContext<Context>()
+    val player1 = com.mosalah.quran.service.audio.QuranAudioPlayer.getInstance(context)
+    val player2 = com.mosalah.quran.service.audio.QuranAudioPlayer.getInstance(context)
+    assertSame("QuranAudioPlayer should be a singleton", player1, player2)
+    assertEquals(com.mosalah.quran.service.audio.AudioPlaybackStatus.IDLE, player1.uiState.value.status)
+    assertEquals(1, player1.uiState.value.surahNumber)
+    assertEquals(1, player1.uiState.value.ayahNumber)
+    assertEquals("quran_audio_playback_v2", com.mosalah.quran.service.audio.QuranAudioService.CHANNEL_ID)
+    assertEquals(2001, com.mosalah.quran.service.audio.QuranAudioService.NOTIFICATION_ID)
+  }
 }
